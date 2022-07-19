@@ -16,9 +16,9 @@ function Blog({ blog, updateBlog, title, content, id }) {
           <li className='content'>{content}</li>
         </ul>
       </li>
-        <button onClick={updateHandler({id})} className='complete-btn'>
+        {/* <button onClick={updateHandler({id})} className='complete-btn'>
             <i className='fas fa-pen-to-square'></i>
-        </button>
+        </button> */}
     </div>
   )
 }

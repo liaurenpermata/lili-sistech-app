@@ -6,7 +6,7 @@ function Blogs({ blogs, updateBlog }) {
     <div className='blogs-container'>
       <ul className="blogs-list">
         {blogs.map((blog) => (
-            <Blog key={blog.id} updateBlog={updateBlog} blog={blog} title={blog.title} content={title.content} id={blog.id}/>
+            <Blog key={blog.id} updateBlog={updateBlog} blog={blog} title={blog.title} content={blog.content} id={blog.id}/>
         ))}
       </ul>
     </div>
