@@ -1,24 +1,38 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-function Blog({ blog, updateBlog, title, content, id }) {
+function Blog({ updNewBlog, setUpdNewBlog, blogs, blog, updateBlog, setBlogs }) {
 
-  // ini mau diganti ke khusus edit karena edit kan bukan ada di tombol ini lagian inputnya harus dibikin jadi none
-  //jan lupa yak mau tidur bisi besok tiba tiba lupa gituu
-  const updateHandler = (id) => {
-    updateBlog(id);
+  const [inputText, setInputText] = useState("");
+
+  const updateHandler = (e, id, val) => { 
+    e.preventDefault();
+
+    updateBlog(id, val, {title: blog.title, content: val, id:id});
+    setInputText("");
+    window.location.reload();
+  }
+
+  const updateInput = (e) => {
+    setInputText(e.target.value);
+    console.log(e.target.value);
   }
 
   return (
     <div className='blog'>
       <li className="blog-item">
         <ul className='blog-item-ul'>
-          <li className='title'>{title}</li>
-          <li className='content'>{content}</li>
+          <li className='title'>{blog.title}</li>
+          <li className='content'>{blog.content}</li>
         </ul>
       </li>
-        {/* <button onClick={updateHandler({id})} className='complete-btn'>
+
+      <form>
+      <input className='update-input' onChange={updateInput} type="text" value={inputText}/>
+        <button onClick={(event) => updateHandler(event,blog.id,inputText)} className='complete-btn' type="submit">
             <i className='fas fa-pen-to-square'></i>
-        </button> */}
+        </button>
+
+      </form>
     </div>
   )
 }

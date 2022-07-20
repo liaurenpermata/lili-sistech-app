@@ -15,7 +15,13 @@ function FormBlog({ createBlog }) {
 
   const submitBlogButton = (e) => {
     e.preventDefault();
+    if(!newTitle && !newContent){
+     alert('Please add title and content!');
+     return 
+    }
     createBlog({ title : newTitle, content : newContent});
+    setNewTitle('');
+    setNewContent('');
   }
 
   return (
