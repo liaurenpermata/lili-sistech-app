@@ -1,12 +1,12 @@
 import React from 'react'
 import Blog from './Blog'
 
-function Blogs({ updNewBlog, setUpdNewBlog, blogs, updateBlog, setBlogs }) {
+function Blogs({ getLike, setTitle, setIdBlog, blogs, updateBlog }) {
   return (
     <div className='blogs-container'>
       <ul className="blogs-list">
         {blogs.map((blog) => (
-            <Blog updNewBlog={updNewBlog} setUpdNewBlog={setUpdNewBlog} key={blog.id} setBlogs={setBlogs} updateBlog={updateBlog} blog={blog} blogs={blogs}/>
+            <Blog getLikes={getLike} setIdBlog={setIdBlog} setTitle={setTitle} key={blog.id} updateBlog={updateBlog} blog={blog}/>
         ))}
       </ul>
     </div>

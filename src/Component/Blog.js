@@ -1,38 +1,33 @@
 import React, { useState } from 'react'
 
-function Blog({ updNewBlog, setUpdNewBlog, blogs, blog, updateBlog, setBlogs }) {
+function Blog({ getLikes, setIdBlog, setTitle, blog }) {
 
-  const [inputText, setInputText] = useState("");
-
-  const updateHandler = (e, id, val) => { 
-    e.preventDefault();
-
-    updateBlog(id, val, {title: blog.title, content: val, id:id});
-    setInputText("");
-    window.location.reload();
+  const setIdUpdate = () => {
+    setIdBlog(blog.id);
+    setTitle(blog.title);
   }
 
-  const updateInput = (e) => {
-    setInputText(e.target.value);
-    console.log(e.target.value);
+  const getLike = () => {
+    getLikes(blog.id);
   }
 
   return (
-    <div className='blog'>
-      <li className="blog-item">
-        <ul className='blog-item-ul'>
-          <li className='title'>{blog.title}</li>
-          <li className='content'>{blog.content}</li>
-        </ul>
-      </li>
+    <div className='blog' onClick={setIdUpdate}>
+      <div className='blog-item'>
+        <div className='item title'>
+          <p>{blog.title}</p>
+        </div>
 
-      <form>
-      <input className='update-input' onChange={updateInput} type="text" value={inputText}/>
-        <button onClick={(event) => updateHandler(event,blog.id,inputText)} className='complete-btn' type="submit">
-            <i className='fas fa-pen-to-square'></i>
-        </button>
+        <div className='item content'>
+          <p>{blog.content}</p>
+        </div>
+      </div>
 
-      </form>
+      <div className='blog-like'>
+        <i className='fas fa-heart fa-lg' onClick={getLike}></i>
+        <span>{blog.like}</span>
+        <span>{blog.like > 1 ? "Likes" : "Like"}</span>
+      </div>
     </div>
   )
 }

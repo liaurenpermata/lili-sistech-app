@@ -26,11 +26,22 @@ function FormBlog({ createBlog }) {
 
   return (
     <form>
-      <input value={newTitle} onChange={newTitleHandler} type="text" className="blog-input" />
-      <input value={newContent} onChange={newContentHandler} type="text" className="blog-input" />
-      <button onClick={submitBlogButton} className="blog-button" type="submit">
-        <i className="fas fa-plus-square"></i>
-      </button>
+      <h3>Write your new blog!</h3>
+      <div className='form-input'>
+        <div className='form-control'>
+          <span>Title Blog</span>
+          <input value={newTitle} onChange={newTitleHandler} type="text" className="title-input" />        
+        </div>
+
+        <div className='form-control'>
+          <span>Content Blog</span>
+          <textarea value={newContent} onChange={newContentHandler} type="text" className="content-input" />
+        </div>
+      </div>
+      
+      <div className='form-input'>
+        <button onClick={submitBlogButton} className="create btn" type="submit">Add Blog</button>
+      </div>
     </form>
   )
 }

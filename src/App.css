@@ -1,43 +1,144 @@
-/* .update-input {
-  display: none;
-} */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
 
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
 
 .App {
-  text-align: center;
+  margin: 30px auto;
+  overflow: auto;
+  /* border: 1px solid steelblue; */
+  padding: 30px 80px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.app-item {
+  border: 1px solid #5cb85c;
+  margin: 30px auto;
+  border-radius: 5px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.btn {
+  /* display: inline-block; */
+  background: #0275d8;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 15px;
+  font-family: inherit;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.btn:hover {
+  transform: scale(0.98);
+  background: #1063aa;
 }
 
-.App-link {
-  color: #61dafb;
+form {
+  padding: 20px 25px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.form-control span {
+  display: block;
+  margin-top: 10px;
+  font-size: medium;
+  font-weight: 600;
+}
+
+input, textarea {
+  margin-top: 10px;
+  width: 400px;
+  font-size: large;
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 5px;
+  font-weight: 300;
+}
+ 
+input:focus, textarea:focus  {
+    border: 1px solid #1670BE;
+    box-shadow: 0 0 3px #1670BE;
+    outline-offset: 0px;
+    outline: none;
+}
+
+.form-control input {
+  height: 30px;
+}
+
+.form-control textarea {
+  height: 60px;
+}
+
+.form-input button {
+  margin-top: 15px;
+  width: 385px;
+}
+
+.blog{
+  list-style: none;
+  background-color: #DFDFDE;
+  border: 1px solid #5cb85c;
+  border-radius: 5px;
+  margin: 20px;
+  padding: 10px;
+  /* display: flex; */
+}
+
+.blog:hover {
+  background-color: #EEEEEE;
+}
+
+.update-form {
+  padding: 20px;
+}
+
+.update-item {
+  display: grid;
+  margin: 5px auto;
+}
+
+.update-item label {
+  font-size: 14px;
+}
+
+.update-item span {
+  font-size: 10px;
+  color: #d9534f;
+}
+
+.update.btn {
+  width: 100px;
+  margin: 10px auto;
+}
+
+.title {
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.blog-like {
+  margin-top: 10px;
+}
+
+.blog-like span {
+  margin-left: 5px;
+  font-size: smaller;
+}
+
+.blog-like i {
+  cursor: pointer;
+}
+
+.blog-like i:hover{
+  color: #E60965;
 }
