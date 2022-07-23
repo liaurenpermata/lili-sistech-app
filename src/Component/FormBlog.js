@@ -28,12 +28,12 @@ function FormBlog({ createBlog }) {
     <form>
       <h3>Write your new blog!</h3>
       <div className='form-input'>
-        <div className='form-control'>
+        <div className='form-item'>
           <span>Title Blog</span>
           <input value={newTitle} onChange={newTitleHandler} type="text" className="title-input" />        
         </div>
 
-        <div className='form-control'>
+        <div className='form-item'>
           <span>Content Blog</span>
           <textarea value={newContent} onChange={newContentHandler} type="text" className="content-input" />
         </div>

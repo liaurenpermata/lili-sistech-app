@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
 
-function UpdateBlog({ idBlog, updateBlog }) {
+function UpdateBlog({ title, idBlog, updateBlog }) {
 
     // const [title, setTitle] = useState("");
     const [content, setContent] = useState("");
@@ -33,7 +33,7 @@ function UpdateBlog({ idBlog, updateBlog }) {
         </div> */}
 
         <div className='update-item'>
-            <label>New Content Blog:</label>
+            <label>New Content Blog: <span>{title}</span></label>
             <input className="update-input" onChange={updateContent} type="text" value={content}/>
             <span>Click the blog that you want to update first!</span>
         </div>

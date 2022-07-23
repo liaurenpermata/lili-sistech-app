@@ -13,15 +13,21 @@ body {
 
 .App {
   margin: 30px auto;
+  margin-top: 0px;
   overflow: auto;
   /* border: 1px solid steelblue; */
   padding: 30px 80px;
+  padding-top: 0px;
 }
 
 .app-item {
   border: 1px solid #5cb85c;
   margin: 30px auto;
   border-radius: 5px;
+}
+
+.App .app-item:nth-child(1){
+  border: none;
 }
 
 .btn {
@@ -47,7 +53,7 @@ form {
   padding: 20px 25px;
 }
 
-.form-control span {
+.form-item span {
   display: block;
   margin-top: 10px;
   font-size: medium;
@@ -71,11 +77,11 @@ input:focus, textarea:focus  {
     outline: none;
 }
 
-.form-control input {
+.form-item input {
   height: 30px;
 }
 
-.form-control textarea {
+.form-item textarea {
   height: 60px;
 }
 
@@ -86,7 +92,8 @@ input:focus, textarea:focus  {
 
 .blog{
   list-style: none;
-  background-color: #DFDFDE;
+  /* background-color: #DFDFDE; */
+  background-color: #D4F6CC;
   border: 1px solid #5cb85c;
   border-radius: 5px;
   margin: 20px;
@@ -95,7 +102,9 @@ input:focus, textarea:focus  {
 }
 
 .blog:hover {
-  background-color: #EEEEEE;
+  /* background-color: #EEEEEE; */
+  background-color: #8bf58d;
+  transform: scale(1.01);
 }
 
 .update-form {
@@ -114,6 +123,13 @@ input:focus, textarea:focus  {
 .update-item span {
   font-size: 10px;
   color: #d9534f;
+}
+
+.update-item span:first-child{
+  /* color: #1063aa; */
+  font-size: medium;
+  font-weight: 600;
+  color: #E60965;
 }
 
 .update.btn {
@@ -142,3 +158,130 @@ input:focus, textarea:focus  {
 .blog-like i:hover{
   color: #E60965;
 }
+
+.button-scroll {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  cursor: pointer;
+}
+
+/* .visible {
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 100%;
+  background-color: #5cb85c;
+  box-shadow: 10px 10px 5px #aaaaaa;
+} */
+
+.visible.opacity-100 {
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 100%;
+  background-color: #5cb85c;
+  box-shadow: 10px 10px 5px #aaaaaa;
+}
+
+.visible.opacity-100:hover {
+  width: 55px;
+  height: 55px;
+}
+
+.visible.opacity-0 {
+  opacity: 0;
+}
+
+.button-scroll i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: white;
+}
+
+#navbarNav{
+  align-items: end;
+  justify-content: end;
+}
+
+.jumbotron {
+  /* background: radial-gradient(circle at top left, #F2FFE9, #72cd54, #DB6B97); */
+  background-image: url("../public/sistech\ background-12.png");
+  background-position: left top;
+  height: 405px;
+}
+
+.jumbotron hr {
+  width: 700px;
+}
+
+.experiences .card {
+  margin: 30px 50px;
+}
+
+.experiences h5 {
+  font-weight: 600;
+}
+
+.experiences p{
+  font-size: smaller;
+}
+
+.experiences span {
+  color: #E60965;
+}
+
+.experiences ul {
+  margin-left: 20px;
+}
+
+.project {
+  margin-left: 30px;
+  margin-bottom: 30px;
+}
+
+.project h3 {
+  margin-bottom: 50px;
+}
+
+.project .card {
+  width: 200px;
+  height: 250px;
+}
+
+.project .card:hover{
+  transform: scale(1.05);
+}
+
+.project .row.no-gutters:nth-child(3) {
+  margin-top: 20px;
+  justify-content: center;
+}
+
+.project p{
+  font-size: 12px;
+}
+
+.project h6 {
+  font-weight: 600;
+}
+
+.project a {
+  font-size: 13px;
+}
+
+.skill {
+  margin: 30px auto;
+}
+
+.skill .row {
+  margin: auto 20%;
+}
+
+.skill .card {
+  width: 90px;
+  border: none;
+}
+

@@ -1,14 +1,21 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import './App.css';
 
 import Blogs from './Component/Blogs';
 import FormBlog from './Component/FormBlog';
 import UpdateBlog from './Component/UpdateBlog';
+import CV from './Component/CV'
+import ScrollToTop from './Component/ScrollToTop';
 
 function App() {
   const [blogs, setBlogs] = useState([]);
   const [idBlog, setIdBlog] = useState("");
   const [title, setTitle] = useState("");
+
+  const scrollCV = useRef(null);
+  const scrollAddBlog = useRef(null);
+  const scrollUpdateBlog = useRef(null);
+  const scrollBlogs = useRef(null);
 
   useEffect(() => {
     const getBlogs = async () => {
@@ -89,19 +96,65 @@ function App() {
     ) : console.log('error while update blog');
   }
 
+  function handleScrollCV () {
+    scrollCV.current.scrollIntoView({behavior: 'smooth'});
+  }
+  function handleScrollAddBlog () {
+    scrollAddBlog.current.scrollIntoView({behavior: 'smooth'});
+  }
+  function handleScrollUpdateBlog () {
+    scrollUpdateBlog.current.scrollIntoView({behavior: 'smooth'});
+  }
+  function handleScrollBlogs () {
+    scrollBlogs.current.scrollIntoView({behavior: 'smooth'});
+  }
+
   return (
     <div className="App">
-      <div className='app-item'>
+
+      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <a className="navbar-brand" href="#">Lili Sistech</a>
+        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span className="navbar-toggler-icon"></span>
+        </button>
+
+        <div className="collapse navbar-collapse" id="navbarNav">
+          <ul className="navbar-nav">
+            <li className="nav-item">
+              <a className="nav-link" onClick={handleScrollCV}>CV</a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" onClick={handleScrollAddBlog}>Add Blog</a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" onClick={handleScrollUpdateBlog}>Update Blog</a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" onClick={handleScrollBlogs}>Blogs</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+
+      <div className='app-item' ref={scrollCV}>
+        <CV/>
+      </div>
+
+      <div className='app-item' ref={scrollAddBlog}>
         <FormBlog createBlog={createBlog}/>
       </div>
 
-      <div className='app-item'>
-        <UpdateBlog idBlog={idBlog} updateBlog={updateBlog}/>
+      <div className='app-item' ref={scrollUpdateBlog}>
+        <UpdateBlog  title={title} idBlog={idBlog} updateBlog={updateBlog}/>
       </div>
 
-      <div className='app-item'>
+      <div className='app-item' ref={scrollBlogs}>
         <Blogs getLike={getLike} setTitle={setTitle} setIdBlog={setIdBlog} idBlog={idBlog} blogs={blogs} updateBlog={updateBlog}/>
       </div>
+
+    <ScrollToTop/>
+
     </div>
   );
 }
