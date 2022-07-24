@@ -54,7 +54,7 @@ function CV() {
               </div>
 
               <div className='col-md-2'>
-                <a href="https://bncc.net/" className="btn btn-primary">Check It Out!</a>
+                <a href="https://student-activity.binus.ac.id/bncc/organization-structure/" className="btn btn-primary">Check It Out!</a>
               </div>
             </div>
           </div>
