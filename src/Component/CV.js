@@ -24,7 +24,7 @@ function CV() {
 
               <div className='col-md-10'>
                 <h5 className="card-title">IT Administrator</h5>
-                <p className='card-text'>Ikatan Apoteker Indonesia <span>Mei 2022 - Juni 2022</span></p>
+                <p className='card-text'>Ikatan Apoteker Indonesia <span>May 2022 - July 2022</span></p>
                 <ul className='card-text'>
                   <li>Managed over 1000+ participant data, invoice, and account access using Wordpress CMS.</li>
                   <li>Coordinated 42+ Zoom Meeting Webinar with 6 Host & 10 Co-Host, 15+ sponsor, and tawk.to website.</li>
@@ -46,7 +46,7 @@ function CV() {
 
               <div className='col-md-10'>
                 <h5 className="card-title">Chief Financial Officer</h5>
-                <p className='card-text'>BNCC @Bandung <span>Maret 2022 - Present</span></p>
+                <p className='card-text'>BNCC @Bandung <span>March 2022 - Present</span></p>
                 <ul className='card-text'>
                   <li>Monitored internal & external document of 10+ events in BNCC.</li>
                   <li>Collaborated with human resource, marketing, research, and training division to maintain substantial organizational growth.</li>
